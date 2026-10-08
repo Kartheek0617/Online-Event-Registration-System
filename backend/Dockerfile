@@ -57,8 +57,6 @@ USER 10001:10001
 EXPOSE 8000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
-    CMD-SHELL curl -f http://localhost:${PORT:-8000}/health || exit 1
 
 # Start FastAPI using Render's PORT, with 8000 as local fallback
 CMD ["sh", "-c", "uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
