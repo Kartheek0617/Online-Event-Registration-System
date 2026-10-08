@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sse-event-system
+  labels:
+    app.kubernetes.io/name: online-event-registration
+    security.policy/tier: production
